@@ -1,7 +1,9 @@
 package com.mock.test.dao;
 
 import com.mock.test.pojo.User;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,10 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    int countByUsername(String username);
+
+    int countByEmail(String email);
+
+    User selectByUsername(String username);
 }
